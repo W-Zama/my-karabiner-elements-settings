@@ -136,3 +136,81 @@
   ]
 }
 ```
+
+## Ctrl+N for English input, Ctrl+M for Japanese Kana input
+
+```json
+{
+  "description": "Ctrl+N for English input, Ctrl+M for Japanese Kana input",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "n",
+        "modifiers": {
+          "mandatory": ["control"],
+          "optional": ["any"]
+        }
+      },
+      "to": [{ "select_input_source": { "language": "en" } }],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "m",
+        "modifiers": {
+          "mandatory": ["control"],
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "select_input_source": {
+            "input_source_id": "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese",
+            "language": "ja"
+          }
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
+```
+
+## Left Command + Control for English input, Right Command + Control for Japanese input
+
+```json
+{
+  "description": "Left Command + Control for English input, Right Command + Control for Japanese input",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "left_command",
+        "modifiers": {
+          "mandatory": ["control"],
+          "optional": ["any"]
+        }
+      },
+      "to": [{ "select_input_source": { "language": "en" } }],
+      "type": "basic"
+    },
+    {
+      "from": {
+        "key_code": "right_command",
+        "modifiers": {
+          "mandatory": ["control"],
+          "optional": ["any"]
+        }
+      },
+      "to": [
+        {
+          "select_input_source": {
+            "input_source_id": "com.apple.inputmethod.Kotoeri.RomajiTyping.Japanese",
+            "language": "ja"
+          }
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+}
+```
